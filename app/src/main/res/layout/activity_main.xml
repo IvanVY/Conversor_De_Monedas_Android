@@ -25,11 +25,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginBottom="252dp"
-        android:background="@android:color/transparent"
+        android:layout_marginBottom="228dp"
         android:minHeight="48dp"
         android:padding="5dp"
-        android:popupBackground="@android:color/transparent"
+        android:popupBackground="#CCB52F23"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/resultText"
         app:layout_constraintHorizontal_bias="0.0"
@@ -41,10 +40,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="324dp"
-        android:background="@android:color/transparent"
         android:minHeight="48dp"
         android:padding="5dp"
-        android:popupBackground="@android:color/transparent"
+        android:popupBackground="#CDFD683D"
         app:layout_constraintEnd_toStartOf="@+id/cantidadInput"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guideline"
@@ -107,6 +105,20 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/btnSwap"
         app:layout_constraintVertical_bias="0.811" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

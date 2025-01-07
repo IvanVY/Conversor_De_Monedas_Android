@@ -24,7 +24,7 @@ public class ConsultarMonedas {
         protected Monedas doInBackground(String... params) {
             String monedaActual = params[0];
             String monedaConvertir = params[1];
-            String urlString = "https://v6.exchangerate-api.com/v6/1a5e16cb06b45bbffd2d116d/pair/" + monedaActual + "/" + monedaConvertir;
+            String urlString = "https://v6.exchangerate-api.com/v6/9f33528b73635265a71317a0/pair/" + monedaActual + "/" + monedaConvertir;
 
             HttpURLConnection connection = null;
 

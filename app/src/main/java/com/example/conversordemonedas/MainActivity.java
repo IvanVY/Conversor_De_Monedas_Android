@@ -5,6 +5,8 @@ import static com.example.conversordemonedas.R.id.resultText;
 import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
@@ -29,6 +31,15 @@ public class MainActivity extends AppCompatActivity {
     TextInputEditText cantidadInput;  // Campo de entrada para la cantidad
     TextView resultText;     // Campo para mostrar el resultado de la conversión
 
+    private static final long TYPING_DELAY = 400; // 500ms de retraso
+    private Handler handler = new Handler(Looper.getMainLooper());
+    private Runnable typingRunnable = new Runnable() {
+        @Override
+        public void run() {
+            realizarConversion();  // Llamamos a la conversión después del retraso
+        }
+    };
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
         // Configura los adaptadores para los Spinners
         adapter = new SpinnerAdapter(this, monedasList);
+        spin.setAdapter(adapter);// Establece el adaptador para el Spinner de origen
         adapter2 = new SpinnerAdapter(this, new ArrayList<>(monedasList)); // Copia de la lista completa
-
-        spin.setAdapter(adapter);
         spin2.setAdapter(adapter2);
 
         // Seleccionamos valores iniciales diferentes
@@ -83,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                realizarConversion();
+                handler.removeCallbacks(typingRunnable); // Eliminar el retraso anterior
+                handler.postDelayed(typingRunnable, TYPING_DELAY); // Esperar 500ms antes de hacer la conversión
             }
 
             @Override
@@ -109,6 +120,18 @@ public class MainActivity extends AppCompatActivity {
         monedasList.add(new SpinnerMonedas("ARS", R.drawable.argentina_icon));
         monedasList.add(new SpinnerMonedas("BRL", R.drawable.brasil_icon));
         monedasList.add(new SpinnerMonedas("COP", R.drawable.colombia_icon));
+        monedasList.add(new SpinnerMonedas("US", R.drawable.usa_icon));
+        monedasList.add(new SpinnerMonedas("AR", R.drawable.argentina_icon));
+        monedasList.add(new SpinnerMonedas("BR", R.drawable.brasil_icon));
+        monedasList.add(new SpinnerMonedas("CO", R.drawable.colombia_icon));
+        monedasList.add(new SpinnerMonedas("USD", R.drawable.usa_icon));
+        monedasList.add(new SpinnerMonedas("ARS", R.drawable.argentina_icon));
+        monedasList.add(new SpinnerMonedas("BRL", R.drawable.brasil_icon));
+        monedasList.add(new SpinnerMonedas("COP", R.drawable.colombia_icon));
+        monedasList.add(new SpinnerMonedas("US", R.drawable.usa_icon));
+        monedasList.add(new SpinnerMonedas("AR", R.drawable.argentina_icon));
+        monedasList.add(new SpinnerMonedas("BR", R.drawable.brasil_icon));
+        monedasList.add(new SpinnerMonedas("CO", R.drawable.colombia_icon));
     }
 
     private void realizarConversion() {
@@ -128,14 +151,9 @@ public class MainActivity extends AppCompatActivity {
 
         double cantidad = Double.parseDouble(cantidadStr);
 
-        //ProgressDialog progressDialog = new ProgressDialog(this);
-        //progressDialog.setMessage("Convirtiendo...");
-        //progressDialog.show();
-
         new ConsultarMonedas.ConsultaMonedaAsync(new ConsultarMonedas.ConsultaMonedaAsync.ConversionListener() {
             @Override
             public void onConversionComplete(Monedas monedas) {
-                //progressDialog.dismiss();
                 if (monedas == null || monedas.getConversionRate() <= 0) {
                     Toast.makeText(MainActivity.this, "Error al obtener la tasa de conversión", Toast.LENGTH_SHORT).show();
                     return;
@@ -149,7 +167,6 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onError(String error) {
-               // progressDialog.dismiss();
                 Toast.makeText(MainActivity.this, error, Toast.LENGTH_SHORT).show();
             }
         }).execute(monedaOrigen.getMonedasNombre(), monedaDestino.getMonedasNombre());

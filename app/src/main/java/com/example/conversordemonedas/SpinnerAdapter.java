@@ -16,7 +16,6 @@ import java.util.List;
 public class SpinnerAdapter extends ArrayAdapter<SpinnerMonedas> {
 
     private final List<SpinnerMonedas> monedasList;
-
     public SpinnerAdapter(@NonNull Context context, @NonNull List<SpinnerMonedas> objects) {
         super(context, 0, objects);
         this.monedasList = objects; // Guarda la lista para poder modificarla.
@@ -30,6 +29,7 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerMonedas> {
 
     @Override
     public View getDropDownView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        // Mostrar solo los primeros elementos
         return initView(position, convertView, parent);
     }
 
@@ -47,11 +47,7 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerMonedas> {
         return convertView;
     }
 
-    //Metodo para mover el ítem seleccionado a la primera posición.
-    public void moveItemToFirst(int position) {
-        SpinnerMonedas selectedMoneda = monedasList.get(position);
-        monedasList.remove(position);
-        monedasList.add(0, selectedMoneda);  // Mueve el ítem seleccionado a la primera posición
-        notifyDataSetChanged();  // Notifica al adaptador para que actualice el Spinner
-    }
+
+
 }
+

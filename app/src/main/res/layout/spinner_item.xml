@@ -6,8 +6,8 @@
 
     <ImageView
         android:id="@+id/monedas_imagen"
-        android:layout_width="60dp"
-        android:layout_height="90dp"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
         android:src="@drawable/usa_icon"/>
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_alignBottom="@+id/monedas_imagen"
         android:layout_alignParentTop="true"
         android:text="USD"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:layout_toEndOf="@id/monedas_imagen"
         android:textColor="@color/black"
         android:textSize="20sp"

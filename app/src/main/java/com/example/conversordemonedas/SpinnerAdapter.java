@@ -34,20 +34,20 @@ public class SpinnerAdapter extends ArrayAdapter<SpinnerMonedas> {
     }
 
     private View initView(int position, View convertView, ViewGroup parent) {
-        if (convertView == null){
+        if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.spinner_item, parent, false);
         }
         TextView monedasNombre_tv = convertView.findViewById(R.id.monedas_nombre);
         ImageView monedasImagen = convertView.findViewById(R.id.monedas_imagen);
         SpinnerMonedas currentMoneda = getItem(position);
-        if (currentMoneda != null){
+        if (currentMoneda != null) {
             monedasNombre_tv.setText(currentMoneda.getMonedasNombre());
             monedasImagen.setImageResource(currentMoneda.getMonedasImg());
         }
         return convertView;
     }
 
-    //Método para mover el ítem seleccionado a la primera posición.
+    //Metodo para mover el ítem seleccionado a la primera posición.
     public void moveItemToFirst(int position) {
         SpinnerMonedas selectedMoneda = monedasList.get(position);
         monedasList.remove(position);

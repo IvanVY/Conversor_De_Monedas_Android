@@ -120,18 +120,23 @@ public class MainActivity extends AppCompatActivity {
         monedasList.add(new SpinnerMonedas("ARS", R.drawable.argentina_icon));
         monedasList.add(new SpinnerMonedas("BRL", R.drawable.brasil_icon));
         monedasList.add(new SpinnerMonedas("COP", R.drawable.colombia_icon));
-        monedasList.add(new SpinnerMonedas("US", R.drawable.usa_icon));
-        monedasList.add(new SpinnerMonedas("AR", R.drawable.argentina_icon));
-        monedasList.add(new SpinnerMonedas("BR", R.drawable.brasil_icon));
-        monedasList.add(new SpinnerMonedas("CO", R.drawable.colombia_icon));
-        monedasList.add(new SpinnerMonedas("USD", R.drawable.usa_icon));
-        monedasList.add(new SpinnerMonedas("ARS", R.drawable.argentina_icon));
-        monedasList.add(new SpinnerMonedas("BRL", R.drawable.brasil_icon));
-        monedasList.add(new SpinnerMonedas("COP", R.drawable.colombia_icon));
-        monedasList.add(new SpinnerMonedas("US", R.drawable.usa_icon));
-        monedasList.add(new SpinnerMonedas("AR", R.drawable.argentina_icon));
-        monedasList.add(new SpinnerMonedas("BR", R.drawable.brasil_icon));
-        monedasList.add(new SpinnerMonedas("CO", R.drawable.colombia_icon));
+        monedasList.add(new SpinnerMonedas("AED", R.drawable.united_arabe_mirates_icon));
+        monedasList.add(new SpinnerMonedas("AFN", R.drawable.afghanistan_icon));
+        monedasList.add(new SpinnerMonedas("ALL", R.drawable.albania_icon));
+        monedasList.add(new SpinnerMonedas("AMD", R.drawable.armenia_icon));
+        monedasList.add(new SpinnerMonedas("ANG", R.drawable.netherlands_antilles_icon));
+        monedasList.add(new SpinnerMonedas("AOA", R.drawable.angola_icon));
+        monedasList.add(new SpinnerMonedas("AUD", R.drawable.australia_icon));
+        monedasList.add(new SpinnerMonedas("AWG", R.drawable.aruba_icon));
+        monedasList.add(new SpinnerMonedas("AZN", R.drawable.azerbaijan_icon));
+        monedasList.add(new SpinnerMonedas("BAM", R.drawable.bosnia_and_herzegovina_icon));
+        monedasList.add(new SpinnerMonedas("BBD", R.drawable.barbados_icon));
+        monedasList.add(new SpinnerMonedas("BDT", R.drawable.bangladesh_icon));
+        monedasList.add(new SpinnerMonedas("BGN", R.drawable.bulgaria_icon));
+        monedasList.add(new SpinnerMonedas("BHD", R.drawable.bahrain_icon));
+        monedasList.add(new SpinnerMonedas("BIF", R.drawable.burundi_icon));
+        monedasList.add(new SpinnerMonedas("BMD", R.drawable.bermuda_icon));
+        monedasList.add(new SpinnerMonedas("BND", R.drawable.brunei_icon));
     }
 
     private void realizarConversion() {

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     TextInputEditText cantidadInput;  // Campo de entrada para la cantidad
     TextView resultText;     // Campo para mostrar el resultado de la conversión
 
-    private static final long TYPING_DELAY = 400; // 500ms de retraso
+    private static final long TYPING_DELAY = 200; // 500ms de retraso
     private Handler handler = new Handler(Looper.getMainLooper());
     private Runnable typingRunnable = new Runnable() {
         @Override

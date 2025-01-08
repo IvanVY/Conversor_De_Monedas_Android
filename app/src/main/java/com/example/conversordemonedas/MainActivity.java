@@ -24,14 +24,13 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-
     Spinner spin, spin2;
     ArrayList<SpinnerMonedas> monedasList;
     SpinnerAdapter adapter, adapter2;
     TextInputEditText cantidadInput;  // Campo de entrada para la cantidad
     TextView resultText;     // Campo para mostrar el resultado de la conversión
 
-    private static final long TYPING_DELAY = 200; // 500ms de retraso
+    private static final long TYPING_DELAY = 200; // 200ms de retraso
     private Handler handler = new Handler(Looper.getMainLooper());
     private Runnable typingRunnable = new Runnable() {
         @Override
